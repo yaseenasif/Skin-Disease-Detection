@@ -16,6 +16,13 @@ class User(db.Model):
         self.password = password
         self.created_date = created_date
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'email': self.email,
+            'username': self.username,
+        }
+
     def __repr__(self):
         return f'<User {self.username}>'
     
